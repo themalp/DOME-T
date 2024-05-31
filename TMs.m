@@ -46,9 +46,9 @@ if rec==1
  
     
     %%%%%%% Image Intensity Normalization
-    NormRec_F      = imnorm(Rec_F,0);
-    NormRec_hist   = double(histeq(uint8(Rec_F)));
-    NormRec_F_hist = double(histeq(uint8(NormRec_F)));
+    NormRec_F      = imnorm(Rec_F,0); % Normalized to 0-255
+    NormRec_hist   = double(histeq(uint8(Rec_F))); %Enhance contrast using histogram equalization
+    NormRec_F_hist = double(histeq(uint8(NormRec_F)));%Enhance contrast of the normalised image
 
     %%%%%%% Compute the normalized reconstruction error and the PSNR
     RecNormError(1,1)   = (sum(sum(((F-NormRec_F)./F).^2)))/(N*M);

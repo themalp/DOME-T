@@ -1,4 +1,4 @@
-function [ Moms, Tn,Tm] = TMs2( img, order )
+function [ Moms, Tn,Tm] = TMsCB( img, order )
 
 F = double( img );
 [ N, M ] = size( F );
